@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "103622204577",
+    "project_id": "fir-java-last-app",
+    "storage_bucket": "fir-java-last-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103622204577:android:ac885b284aa479dac524e0",
+        "android_client_info": {
+          "package_name": "com.devcomm.firebasejavalastapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103622204577-ks8rbdn5e4gj6ejkeg6loggifr1litm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxVDng1dxQF3-p3ySw2QC6VzVStoDip5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103622204577-ks8rbdn5e4gj6ejkeg6loggifr1litm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
