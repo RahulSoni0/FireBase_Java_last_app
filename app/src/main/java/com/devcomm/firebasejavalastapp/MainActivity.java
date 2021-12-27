@@ -29,7 +29,7 @@ import com.google.firebase.storage.UploadTask;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button select , upload ;
+    private Button select , upload , fetch ;
     private TextView filename;
     Uri pdfuri;// urls meant for local storage or path
     FirebaseStorage storage;//used for uploading files
@@ -41,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        fetch = findViewById(R.id.button_FETCH);
+         fetch.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+
+                 Intent intent = new Intent(MainActivity.this,fetched.class);
+                 startActivity(intent);
+             }
+         });
 
         select = findViewById(R.id.button_select);
         upload = findViewById(R.id.button_upload);
@@ -85,7 +94,9 @@ public class MainActivity extends AppCompatActivity {
        progressDialog.setProgress(0);
        progressDialog.show();
 
-        String filename = System.currentTimeMillis() + "";
+        final String filename = System.currentTimeMillis() + ".pdf";
+        final String filename1 = System.currentTimeMillis() + "";
+
         StorageReference storageReference = storage.getReference();
         //path in which file will be saved  root path
 
@@ -102,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String downloadLink = uri.toString();
 
-                        databaseReference.child(filename).setValue(downloadLink).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        databaseReference.child(filename1).setValue(downloadLink).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
